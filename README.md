@@ -1,4 +1,4 @@
-# C4SFLocalDevelopmentKit
+# Coveo For Salesforce Local Development Kit
 
 An adapter library to ease local development with Salesforce components.
 
@@ -33,18 +33,6 @@ Use the `SalesforceResultLink`, `ConsoleResultLink` or `SalesforceQuickview` as 
 | SalesforceResultLink | ResultLink |
 | ConsoleResultLink | ResultLink |
 | SalesforceQuickview | Quickview |
-
-## Extending
-
-Extending the component can be done as follows:
-
-```javascript
-import { C4SFLocalDevelopmentKit, IC4SFLocalDevelopmentKitOptions } from "@coveops/c4-sf-local-development-kit";
-
-export interface IExtendedC4SFLocalDevelopmentKitOptions extends IC4SFLocalDevelopmentKitOptions {}
-
-export class ExtendedC4SFLocalDevelopmentKit extends C4SFLocalDevelopmentKit {}
-```
 
 ## Contribute
 
