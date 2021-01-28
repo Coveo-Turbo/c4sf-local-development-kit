@@ -1,0 +1,178 @@
+$result-action-menu-item-border: thin solid #bcc3ca;
+
+.CoveoSearchInterface.coveo-chat-ended .CoveoResultActionsSendLiveAgent {
+  display: none;
+}
+
+.CoveoResultActionsMenu {
+  display: none;
+  position: relative;
+  height: 1.5rem;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: -24px;
+  background: white;
+
+  .coveo-hidden {
+    display: none;
+  }
+
+  &.coveo-menu-opened {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    float: right;
+  }
+
+  .coveo-result-actions-menu-menu-item {
+    height: initial;
+    padding: 0 8px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    border-left: 1px solid #ccc;
+    line-height: 1.5em;
+
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+
+    &.coveo-hidden {
+      display: none;
+    }
+
+    // All result actions after the first visible action have a left border.
+    &:not(.coveo-hidden):not([style*="display: none"]) {
+      border-left: none;
+    }
+
+    &:not(.coveo-hidden):not([style*="display: none"]) ~ .coveo-result-actions-menu-menu-item:not(.coveo-hidden):not([style*="display: none"]) {
+      border-left: $result-action-menu-item-border;
+    }
+
+    &:first-child {
+      border: transparent;
+    }
+
+    // Hack for now for the AttachToCase CSS
+    &.CoveoAttachToCase {
+      span {
+        visibility: visible;
+        height: 100%;
+      }
+    }
+
+    .coveo-icon-for-quickview-svg {
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: #f3f2f2;
+    }
+
+    svg {
+      height: 16px;
+      width: 16px;
+      fill: #1d4f76;
+      vertical-align: middle;
+    }
+
+    &.CoveoQuickview:hover .coveo-caption-for-icon {
+      /* reset the value to initial for the quickview so popperjs can work properly. */
+      bottom: initial;
+      &:before {
+        border: transparent;
+      }
+    }
+
+    &:hover .coveo-caption-for-icon {
+      display: inline;
+      bottom: 30px;
+      transform: translateX(-50%);
+      left: 50%;
+    }
+    .coveo-caption-for-icon {
+      font-size: 12px;
+      display: none;
+      background: #263e55;
+      color: white;
+      border-radius: 2px;
+      padding: 6px 16px;
+      position: absolute;
+      white-space: nowrap;
+      z-index: 99;
+      &:before {
+        border: solid;
+        border-color: #263e55 transparent;
+        border-width: 7px 6px 0;
+        content: "";
+        position: absolute;
+        z-index: 99;
+        bottom: -6px;
+        top: initial;
+        left: calc(50% - 6px);
+      }
+    }
+  }
+}
+
+.CoveoResultActionsPostToFeed,
+.CoveoResultActionsSendEmail,
+.CoveoResultActionsSendLiveAgent,
+.CoveoResultQuickAction {
+  cursor: pointer;
+  position: relative;
+  margin: 0 0 0 0.5em;
+  line-height: 1.5em;
+  text-align: center;
+
+  svg {
+    height: 16px;
+    width: 16px;
+    fill: #1d4f76;
+    vertical-align: middle;
+  }
+
+  &.coveo-hidden {
+    display: none;
+  }
+
+  & > span {
+    display: inline-block;
+  }
+
+  &:hover .coveo-caption-for-icon {
+    display: inline;
+    bottom: 26px;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .coveo-caption-for-icon {
+    font-size: 12px;
+    display: none;
+    background: #263e55;
+    color: white;
+    border-radius: 2px;
+    padding: 6px 16px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 99;
+    &:before {
+      border: solid;
+      border-color: #263e55 transparent;
+      border-width: 7px 6px 0;
+      content: "";
+      position: absolute;
+      z-index: 99;
+      bottom: -6px;
+      top: initial;
+      left: calc(50% - 6px);
+    }
+  }
+}
